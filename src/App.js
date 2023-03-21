@@ -1,7 +1,6 @@
-import "./App.css";
-
+import AddUser from './Components/AddUser/AddUser';
 function App() {
-  return <div></div>;
+  return <AddUser></AddUser>;
 }
 
 export default App;

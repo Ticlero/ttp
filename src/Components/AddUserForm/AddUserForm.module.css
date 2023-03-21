@@ -1,0 +1,43 @@
+.form-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-box .form-control {
+  padding: 0.25rem 0.25rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-box .form-control label {
+  display: block;
+  font-weight: bold;
+  color: black;
+  padding: 0.25rem 0rem;
+  box-sizing: border-box;
+}
+
+.form-box .form-control input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-box .form-control input[type='text'] {
+  padding: 5px;
+  font-size: 1rem;
+}
+
+.form-box .form-control.invalid label {
+  color: rgb(184, 46, 109);
+}
+
+@media (max-width: 786px) {
+  .form-box {
+  }
+  .form-box .form-control {
+  }
+  .form-box .form-control label {
+  }
+  .form-box .form-control input {
+  }
+}
