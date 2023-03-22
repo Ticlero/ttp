@@ -1,5 +1,26 @@
-.modal .modal-contents {
-  position: relative;
-  margin: 50rem 50rem;
+.modal-contents {
+  background: purple;
+}
+
+.modal-content__title {
+  padding: 1rem;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
+}
+
+.modal-content__msg {
+  padding: 2rem 1rem;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content__btn {
+  /* width: 100%; */
+  background-color: white;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
 }
