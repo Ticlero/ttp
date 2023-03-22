@@ -33,17 +33,20 @@ const AddUserForm = (props) => {
 
     if (enteredUsername.trim().length === 0) {
       setIsNameValid(false);
+      props.setErrorHandler(0);
       flag = false;
     }
 
     if (isNaN(ageValue) || enteredUseAge.trim().length === 0) {
       setIsAgeValid(false);
+      props.setErrorHandler(0);
       flag = false;
     }
 
     if (!isNaN(ageValue)) {
       if (ageValue < 0) {
         setIsAgeValid(false);
+        props.setErrorHandler(1);
         flag = false;
       }
     }
