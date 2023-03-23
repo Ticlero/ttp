@@ -1,12 +1,14 @@
-import React from 'react';
-import Card from '../UI/Card';
+import React from "react";
+import Card from "../UI/Card";
+import styles from "./ViewUser.module.css";
+
 const ViewUser = (props) => {
   return (
-    <Card className="user-list">
-      <ul>
+    <Card className='user-list'>
+      <ul className={`${styles.listBox}`}>
         {props.userLists.map((user) => {
           return (
-            <li key={Math.random(100)}>
+            <li className={`${styles.userItem}`} key={Math.random(100)}>
               {user.userName} ({user.userAge} years old)
             </li>
           );

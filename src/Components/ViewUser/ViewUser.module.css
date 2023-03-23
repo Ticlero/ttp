@@ -1,0 +1,10 @@
+.listBox {
+  all: unset;
+}
+
+.userItem {
+  all: unset;
+  display: block;
+  margin: 0.5rem 0;
+  border: 1px solid black;
+}
