@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import Button from '../UI/Button';
+import React, { useState } from "react";
+import Button from "../UI/Button";
 
-import styles from './AddUserForm.module.css';
+import styles from "./AddUserForm.module.css";
 
 const AddUserForm = (props) => {
-  const [enteredUsername, setEnteredUsername] = useState('');
-  const [enteredUseAge, setEnteredUserAge] = useState('');
+  const [enteredUsername, setEnteredUsername] = useState("");
+  const [enteredUserAge, setEnteredUserAge] = useState("");
   const [isNameValid, setIsNameValid] = useState(true);
   const [isAgeValid, setIsAgeValid] = useState(true);
 
@@ -18,7 +18,7 @@ const AddUserForm = (props) => {
     if (
       !isNaN(Number(e.nativeEvent.data)) ||
       e.nativeEvent.data === null ||
-      e.nativeEvent.data === '-'
+      e.nativeEvent.data === "-"
     ) {
       setEnteredUserAge(e.target.value);
       if (!isNaN(Number(e.target.value))) setIsAgeValid(true);
@@ -27,7 +27,7 @@ const AddUserForm = (props) => {
 
   const onSubmitClick = (e) => {
     e.preventDefault();
-    const ageValue = Number(enteredUseAge);
+    const ageValue = Number(enteredUserAge);
     let flag = true;
 
     if (enteredUsername.trim().length === 0) {
@@ -36,7 +36,7 @@ const AddUserForm = (props) => {
       flag = false;
     }
 
-    if (isNaN(ageValue) || enteredUseAge.trim().length === 0) {
+    if (isNaN(ageValue) || enteredUserAge.trim().length === 0) {
       setIsAgeValid(false);
       props.setErrorHandler(0);
       flag = false;
@@ -61,42 +61,45 @@ const AddUserForm = (props) => {
         lists.unshift(userData);
         return lists;
       });
+
+      setEnteredUsername("");
+      setEnteredUserAge("");
     }
   };
 
   return (
     <form onSubmit={onSubmitClick}>
-      <div className={styles['form-box']}>
+      <div className={styles["form-box"]}>
         <div
-          className={`${styles['form-control']} ${
+          className={`${styles["form-control"]} ${
             !isNameValid && styles.invalid
           }`}
         >
-          <label htmlFor="username">Username</label>
+          <label htmlFor='username'>Username</label>
           <input
-            id="username"
-            placeholder="Add new username"
+            id='username'
+            placeholder='Add new username'
             value={enteredUsername}
-            type="text"
+            type='text'
             onChange={userNameHandler}
           ></input>
         </div>
         <div
-          className={`${styles['form-control']} ${
+          className={`${styles["form-control"]} ${
             !isAgeValid && styles.invalid
           }`}
         >
-          <label htmlFor="userage">Age (Years)</label>
+          <label htmlFor='userage'>Age (Years)</label>
           <input
-            id="userage"
-            placeholder="Add user age"
-            value={enteredUseAge}
-            type="text"
+            id='userage'
+            placeholder='Add user age'
+            value={enteredUserAge}
+            type='text'
             onChange={userAgeHandler}
           ></input>
         </div>
-        <div className={`${styles['form-control']}`}>
-          <Button type="submit">Add User</Button>
+        <div className={`${styles["form-control"]}`}>
+          <Button type='submit'>Add User</Button>
         </div>
       </div>
     </form>
