@@ -72,8 +72,9 @@ const AddUserForm = (props) => {
             !isNameValid && styles.invalid
           }`}
         >
-          <label>Username</label>
+          <label htmlFor="username">Username</label>
           <input
+            id="username"
             placeholder="Add new username"
             value={enteredUsername}
             type="text"
@@ -85,8 +86,9 @@ const AddUserForm = (props) => {
             !isAgeValid && styles.invalid
           }`}
         >
-          <label>Age (Years)</label>
+          <label htmlFor="userage">Age (Years)</label>
           <input
+            id="userage"
             placeholder="Add user age"
             value={enteredUseAge}
             type="text"

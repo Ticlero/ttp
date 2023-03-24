@@ -1,10 +1,14 @@
-import React from "react";
-import Card from "../UI/Card";
-import styles from "./ViewUser.module.css";
+import React from 'react';
+import Card from '../UI/Card';
+import styles from './ViewUser.module.css';
 
 const ViewUser = (props) => {
+  if (props.userLists.length === 0) {
+    return;
+  }
+
   return (
-    <Card className='user-list'>
+    <Card className="user-list">
       <ul className={`${styles.listBox}`}>
         {props.userLists.map((user) => {
           return (
